@@ -1,0 +1,242 @@
+.gallery {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  color: var(--white);
+  background-color: var(--dark);
+  background-image: url("../img/gallery-bg-1920.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.gallery__content-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.gallery__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(400 / 1600 * 100%);
+}
+
+.gallery__last {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: calc(400 / 1600 * 100%);
+}
+
+.left-bottom {
+  display: none;
+  margin-top: auto;
+}
+
+.gallery__slider {
+  width: calc(1150 / 1600 * 100%);
+  margin-right: 0;
+  padding-top: 17px;
+}
+
+.gallery__slides-container {
+  overflow: hidden;
+}
+
+.gallery__nav {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.gallery__pagination {
+  margin-right: 19px;
+  text-align: center;
+}
+
+.gallery__prev {
+  margin-right: 19px;
+}
+
+.gallery__slide {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--background-helper);
+}
+
+.gallery__slide::before {
+  content: "";
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding-top: calc(100% - 6px);
+  border: 3px solid transparent;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.gallery__slide::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+  box-sizing: border-box;
+  opacity: 0;
+  background-color: var(--transparent-dark);
+  background-image: url("../img/loup.svg");
+  background-repeat: no-repeat;
+  background-size: 80px;
+  background-position: center top 46%;
+  background-clip: content-box;
+  transition: opacity 0.5s ease;
+}
+
+.gallery__slide:hover::after {
+  opacity: 1;
+}
+
+.gallery__slide:focus {
+  outline: none;
+}
+
+.gallery__slide:focus::before {
+  border-color: var(--viiolet-dark);
+}
+
+.gallery__slide:active::before {
+  border-color: var(--viiolet-ultra-light);
+  background-color: var(--transparent-rose);
+}
+
+.gallery__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery__filter-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 32px;
+  font-weight: 600;
+}
+
+/* Адаптивная высота слайда регулируется относительно его ширины с помощью padding-top в % для псевдоэлемента ::before */
+
+@media (max-width: 1280px) {
+  .gallery {
+    padding-bottom: 111px;
+  }
+
+  .gallery__left,
+  .gallery__last {
+    width: calc(280 / 924 * 100%);
+  }
+
+  .gallery__slider {
+    width: calc(594 / 924 * 100%);
+  }
+
+  .test-slide::before {
+    padding-top: calc(85% - 6px);
+  }
+
+  .gallery__nav {
+    margin-bottom: 31px;
+    padding-left: 1px;
+  }
+
+  .visible-checkbox {
+    margin-right: 7px;
+  }
+}
+
+@media (max-width: 970px) {
+  .gallery {
+    padding-bottom: 70px;
+  }
+
+  .gallery__left,
+  .gallery__slider {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  
+  .gallery__filter {
+    width: 280px;
+  }
+
+  .gallery__slider {
+    /* margin-bottom: 30px;
+    padding-top: 21px; */
+  }
+
+  .gallery__nav {
+    margin-bottom: 30px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .gallery__left {
+    max-width: 280px;
+	  margin-bottom: 14px;
+  }
+
+
+  .gallery__select {
+    max-width: 300px;
+  }
+
+  .test-slide::before {
+    padding-top: calc(280 / 317 * 100% - 6px);
+  }
+}
+
+@media (max-width: 420px) {
+  .gallery {
+    padding-top: 50px;
+    padding-bottom: 31px;
+  }
+
+  .gallery__left {
+	  margin-bottom: 6px;
+  }
+
+  .gallery__filter {
+    max-width: 100%;
+  }
+
+  .gallery__filter-title {
+    margin-bottom: 5px;
+  }
+
+  .gallery__slider {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .gallery__nav {
+    align-self: center;
+    margin-bottom: 0;
+  }
+
+  .gallery__slides-container {
+    margin-bottom: 20px;
+  }
+
+  .gallery__slide::before {
+    padding-top: calc(367 / 290 * 100% - 6px);
+  }
+}

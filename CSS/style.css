@@ -1,3 +1,26 @@
-.picture {
-	width: 100%;
-}
+@import url("variables.css");
+@import url("keyframes.css");
+@import url("global.css");
+@import url("link.css");
+@import url("btn.css");
+@import url("logo.css");
+@import url("header.css");
+@import url("burger.css");
+@import url("top__wrapper.css");
+@import url("hero.css");
+@import url("about.css");
+@import url("nav-btn.css");
+@import url("filter-choices.css");
+@import url("gallery.css");
+@import url("checkbox.css");
+@import url("catalog.css");
+/* @import url("accordion.css"); */
+@import url("test.accordion.css");
+@import url("events-slider.css");
+@import url("projects.css");
+@import url("partners-slider.css");
+@import url("showroom.css");
+@import url("yar-map.css");
+@import url("form.css");
+@import url("tooltip.css");
+@import url("footer.css");

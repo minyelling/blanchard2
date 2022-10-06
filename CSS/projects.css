@@ -1,0 +1,43 @@
+.projects {
+  padding-top: 40px;
+  padding-bottom: 76px;
+}
+
+.projects__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  color: var(--dark);
+  width: 67%;
+}
+
+.project__title-partners {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+@media (max-width: 1280px) {
+  .projects__text {
+    width: 100%;
+  }
+}
+
+@media (max-width: 970px) {
+  .projects {
+    padding-bottom: 86px;
+}
+}
+
+@media (max-width: 580px) {
+  .project__title-partners {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 11px;
+  }
+
+  .projects {
+    padding-top: 0px;
+    padding-bottom: 25px;
+}
+}
